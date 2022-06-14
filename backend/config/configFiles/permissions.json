@@ -1,0 +1,26 @@
+[
+  {
+    "service": "auth",
+    "function": "user",
+    "verb": [
+      "read",
+      "write"
+    ]
+  },
+  {
+    "service": "auth",
+    "function": "role",
+    "verb": [
+      "read",
+      "write"
+    ]
+  },
+  {
+    "service": "auth",
+    "function": "permission",
+    "verb": [
+      "read",
+      "write"
+    ]
+  }
+]

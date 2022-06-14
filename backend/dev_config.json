@@ -1,0 +1,22 @@
+{
+  "sql": {
+    "host": "localhost",
+    "port": "5432",
+    "username": "postgres",
+    "password": "postgres",
+    "database": "auth_service",
+    "ssl": "disable",
+    "timezone": "Asia/Kolkata",
+    "max_idle_conn": 5,
+    "max_open_conn": 5,
+    "conn_max_lifetime_mins": 5
+  },
+  "log": {
+    "level": "debug"
+  },
+  "init_tenant": {
+    "name": "Test Tenant 001",
+    "short_name": "test_tenant_001",
+    "is_active": true
+  }
+}

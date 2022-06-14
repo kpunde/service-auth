@@ -1,0 +1,117 @@
+swagger: "2.0"
+info:
+  description: "This is API Spec for Auth Service"
+  version: "1.0.0"
+  title: "Auth Service API"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "kpunde13@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost:8080"
+basePath: "/auth"
+tags:
+  - name: "health_check"
+    description: "HealthCheck for the system"
+schemes:
+  - "http"
+paths:
+  
+securityDefinitions:
+  petstore_auth:
+    type: "oauth2"
+    authorizationUrl: "http://petstore.swagger.io/oauth/dialog"
+    flow: "implicit"
+    scopes:
+      write:pets: "modify pets in your account"
+      read:pets: "read your pets"
+  api_key:
+    type: "apiKey"
+    name: "api_key"
+    in: "header"
+definitions:
+  NewPersonRequest:
+    type: "object"
+    properties:
+      is_active:
+        type: "boolean"
+        default: true
+      password:
+        type: "string"
+      email:
+        type: "string"
+        format: "email"
+  NewPermissionRequest:
+    type: "object"
+    properties:
+      title:
+        type: "string"
+      service:
+        type: "string"
+      function:
+        type: "string"
+      verb:
+        type: "string"
+  NewRoleRequest:
+    type: "object"
+    properties:
+      title:
+        type: "string"
+  NewTenantRequest:
+    type: "object"
+    properties:
+      is_active:
+        type: "boolean"
+        default: true
+      name:
+        type: "string"
+      short_name:
+        type: "string"
+  TenantModal:
+    type: "object"
+    properties: 
+      ID: 
+        type: "integer"
+        format: "int64"
+      CreatedAt:
+        type: "string"
+        format: "date-time"
+      UpdatedAt:
+        type: "string"
+        format: "date-time"
+      DeletedAt:
+        type: "string"
+        format: "date-time"
+      is_active:
+        type: "boolean"
+        default: true
+      name:
+        type: "string"
+      short_name:
+        type: "string"
+  PersonModal:
+    type: "object"
+    properties: 
+      Id: 
+        type: "string"
+        format: "uuid"
+      Created:
+        type: "string"
+        format: "date-time"
+      Updated:
+        type: "string"
+        format: "date-time"
+      is_active:
+        type: "boolean"
+        default: true
+      email:
+        type: "string"
+      
+      
+
+
+  
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
